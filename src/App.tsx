@@ -1,10 +1,11 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import {Header} from './components/Header';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.app}>
-      <Text style={styles.text}>React Native</Text>
+      <Header name="Cristiano Silva" title="Olá tudo bem ?" />
     </SafeAreaView>
   );
 };
@@ -14,12 +15,7 @@ export default App;
 const styles = StyleSheet.create({
   app: {
     flex: 1,
-    backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  text: {
-    color: 'white',
-    fontSize: 25,
   },
 });
