@@ -1,11 +1,23 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, SafeAreaView, StyleSheet} from 'react-native';
 import {Header} from './components/Header';
 
 const App = () => {
   const [name, setName] = useState<string>('Cristiano Silva');
-  const [title] = useState<string>('Olá');
+  const [title, setTitle] = useState<string>('Olá');
 
+  /* */
+  useEffect(() => {
+    console.log('Mounted Component');
+    if (name === 'Cristiano Silva') {
+      setTitle('Hello');
+    } else {
+      setTitle('Olá');
+    }
+    return () => console.log('Unmounting');
+  }, [name]);
+
+  /* */
   const changeName = () => {
     setName(old => {
       if (old === 'Cristiano Silva') {
